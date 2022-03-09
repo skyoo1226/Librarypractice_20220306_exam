@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Librarypractice_20220306_exam">
         <activity
             android:name=".ViewPhotoActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
