@@ -1,6 +1,7 @@
 package com.skyoo.librarypractice_20220306_exam
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,6 +16,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setEvents() {
+
+        btnCall.setOnClickListener {
+//            임시로 Call 기능을 넣어 본다 => 앱이 죽을 예정. 권한이 아직 없으므로
+            val myUri = Uri.parse( "tel:010-5555-6666")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
 
         imgProfile.setOnClickListener {
 
