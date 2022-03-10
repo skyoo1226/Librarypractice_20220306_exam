@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
     fun setEvents() {
 
         btnCall.setOnClickListener {
+//            권한이 있는지 확인하고 진행해야 됨
+//            확인은 획득 또는 거부 상황에 따라 다른 행동을 해야 함.
+//            TedPermission 라이브러리의 PermissionListener{} 사용
+            val pl = object :
 //            임시로 Call 기능을 넣어 본다 => 앱이 죽을 예정. 권한이 아직 없으므로
             val myUri = Uri.parse( "tel:010-5555-6666")
             val myIntent = Intent(Intent.ACTION_CALL, myUri)
