@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setValues()
     }
 
+//    setEvents()는 클릭되면 뭘해야 되는 함수만 모아 둔것임. setValues()는 셋이벤트 이외에 화면에서 보야줄 코드를 포함하고 있음.
     fun setEvents() {
 
         btnCall.setOnClickListener {
@@ -68,6 +70,8 @@ class MainActivity : AppCompatActivity() {
     fun setValues() {
 
 //       인터넷상의 이미지를 곧바로 이미지뷰에 반영.
+        Glide.with(this).load("https://img0.yna.co.kr/photo/ap/2011/04/13/PAP20110413127601034_P2.jpg").into(imgInternet)
+
 
     }
 }
