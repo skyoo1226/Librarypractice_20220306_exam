@@ -9,6 +9,9 @@
     android:gravity="center"
     tools:context=".SplashActivity">
 
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:lottie_rawRes="@raw/swipe_ani"/>
 
 </LinearLayout>
