@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.gun0912.tedpermission.PermissionListener
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.Instant
 
@@ -21,7 +23,22 @@ class MainActivity : AppCompatActivity() {
 //            권한이 있는지 확인하고 진행해야 됨
 //            확인은 획득 또는 거부 상황에 따라 다른 행동을 해야 함.
 //            TedPermission 라이브러리의 PermissionListener{} 사용
-            val pl = object :
+//            object에 2가지 함수를 추가해야 함
+//            자동 생성 되는 투두(...)은 앱이 죽기 때문에 지운다.
+            val pl = object : PermissionListener {
+                override fun onPermissionGranted() {
+//      onPermissionGranted()은 권한이 허가 되었을때 작동하는 행동(함수)
+
+                }
+
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+//      onPermissionDenied 은 권한이 거절 되었을때 작동하는 행동(함수). 보통 토스트로 메세지 알림.
+                    Toast.makeText(this@MainActivity, "권한이 거부되어 전화 연결이 불가능합니다.", Toast.LENGTH_SHORT).show()
+
+                }
+
+            }
+
 //            임시로 Call 기능을 넣어 본다 => 앱이 죽을 예정. 권한이 아직 없으므로
             val myUri = Uri.parse( "tel:010-5555-6666")
             val myIntent = Intent(Intent.ACTION_CALL, myUri)
