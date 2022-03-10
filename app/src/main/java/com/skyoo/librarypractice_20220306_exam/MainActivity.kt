@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
                 override fun onPermissionGranted() {
 //      onPermissionGranted()은 권한이 허가 되었을때 작동하는 행동(함수)
 
+//    아래 중갈호에 있던 전화걸기 코드를 여기로 옮겨 옴. 여기서는 실제 권한이 있을때 CALL 기능 실제 활용 됨
+//            임시로 Call 기능을 넣어 본다 => 앱이 죽을 예정. 권한이 아직 없으므로
+                    val myUri = Uri.parse( "tel:010-5555-6666")
+                    val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                    startActivity(myIntent)
+
                 }
 
                 override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
@@ -39,10 +45,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-//            임시로 Call 기능을 넣어 본다 => 앱이 죽을 예정. 권한이 아직 없으므로
-            val myUri = Uri.parse( "tel:010-5555-6666")
-            val myIntent = Intent(Intent.ACTION_CALL, myUri)
-            startActivity(myIntent)
+
         }
 
         imgProfile.setOnClickListener {
