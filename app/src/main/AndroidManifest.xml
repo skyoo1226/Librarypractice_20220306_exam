@@ -13,9 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Librarypractice_20220306_exam">
         <activity
-            android:name=".ViewPhotoActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:name=".SplashActivity"
             android:exported="false" />
+        <activity
+            android:name=".ViewPhotoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
